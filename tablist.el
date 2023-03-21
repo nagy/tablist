@@ -298,7 +298,8 @@ as argument for the function `completion-in-region'.")
 
 ;;;###autoload
 (define-minor-mode tablist-minor-mode
-  nil nil nil nil
+  "Toggle tablist minor mode."
+  :global nil
   (unless (derived-mode-p 'tabulated-list-mode)
     (error "Buffer is not in Tabulated List Mode"))
   (tablist-init (not tablist-minor-mode)))
@@ -989,7 +990,8 @@ Optional REVERT-P means, revert the display afterwards."
     kmap))
 
 (define-minor-mode tablist-edit-column-minor-mode
-  "" nil nil nil
+  "Toggle tablist-edit-column minor mode."
+  :global nil
   (unless (or tablist-minor-mode
               (derived-mode-p 'tablist-mode))
     (error "Not in a tablist buffer"))
